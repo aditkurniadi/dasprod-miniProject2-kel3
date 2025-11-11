@@ -21,7 +21,7 @@ Proyek ini merupakan bagian dari tugas Mini Project 2 yang bertujuan untuk menga
 
 ---
 
-## Pembagian Peran (Roles)
+## Pembagian Peran
 
 Proyek ini dibagi menjadi 4 direktori utama yang merepresentasikan setiap peran dalam tim:
 
@@ -32,7 +32,7 @@ Proyek ini dibagi menjadi 4 direktori utama yang merepresentasikan setiap peran 
      Mengolah data bersih menjadi tabel-tabel ringkasan yang spesifik dan siap untuk divisualisasikan.
 
 3.  Data Visualizer
-    Mengkonversi data dari Data Analyst menjadi visualisasi grafis (file `.png`) menggunakan Matplotlib.
+    Mengkonversi data dari Data Analyst menjadi visualisasi grafis menggunakan Matplotlib.
 
 4.  Presenter
-    Merangkai seluruh hasil kerja (data bersih, visualisasi, dan wawasan) menjadi sebuah laporan atau presentasi yang koheren dan mudah dipahami.
+    Merangkai seluruh hasil kerja (data bersih, visualisasi) menjadi presentasi yang mudah dipahami.
