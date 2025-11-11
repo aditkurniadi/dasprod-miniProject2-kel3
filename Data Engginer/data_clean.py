@@ -9,4 +9,4 @@ File 'data_clean.py' ini adalah KERANGKA KERJA untuk:
 
 # IMPORT LIBRARY
 
-# Tulis Code disini
+# dana benar
