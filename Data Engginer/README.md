@@ -52,8 +52,6 @@ Kolom Lama: Setelah membuat Kelompok_Umur_Standar, kolom Kelompok_Umur yang asli
 
 Duplikasi Agregat (SANGAT PENTING): Setelah memetakan '20-24 Tahun' dan '25-49 Tahun' (misalnya di tahun 2022) menjadi '20-49 Tahun', kita akan memiliki dua baris data untuk '20-49 Tahun' di tahun 2022.
 
-Tugas: Setelah menghapus kolom, lakukan groupby(['Tahun', 'HIV_AIDS', 'Kelompok_Umur_Standar'])['Jumlah_kasus'].sum().reset_index(). Ini akan menjumlahkan dua baris duplikat tersebut menjadi satu baris yang akurat.
-
 Format Output:
 
 Tugas: Simpan hasil akhir sebagai file Excel (.xlsx), bukan .csv, untuk kompatibilitas maksimum. Gunakan index=False saat menyimpan.
