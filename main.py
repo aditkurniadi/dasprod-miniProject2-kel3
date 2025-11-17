@@ -12,7 +12,7 @@ File 'main.py' ini adalah KERANGKA KERJA untuk:
 # IMPORT LIBRARY
 # Mengimpor library yang diperlukan untuk analisis dan visualisasi
 
-# import pandas as pd
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -56,13 +56,27 @@ print("5. Data untuk Grouped Bar Chart siap.")
 print("--- [BAGIAN DATA ANALYST SELESAI] ---")
 
 
-#  BAGIAN DATA ANALYST
-# =============================================================================
-
-# Tulis code disini
-
-
 # BAGIAN DATA VISUALIZER
 # =============================================================================
 
-# Tulis code disini
+# 1. PIE CHART
+#=================
+plt.figure(figsize=(6,6))
+plt.pie(
+    df_pie_processed['Jumlah_kasus'],
+    labels=df_pie_processed['HIV_AIDS'],
+    autopct='%1.1f%%',
+    startangle=90
+)
+plt.title("Distribusi Kasus HIV vs AIDS")
+plt.show()
+
+# 2. BAR CHART (UMUR)
+#=====================
+plt.figure(figsize=(8,5))
+plt.bar(df_bar_processed.index, df_bar_processed.values)
+plt.title("Jumlah Kasus Berdasarkan Kelompok Umur")
+plt.xlabel("Kelompok Umur")
+plt.ylabel("Jumlah Kasus")
+plt.xticks(rotation=50)
+plt.show()
