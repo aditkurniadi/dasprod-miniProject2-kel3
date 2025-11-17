@@ -80,3 +80,48 @@ plt.xlabel("Kelompok Umur")
 plt.ylabel("Jumlah Kasus")
 plt.xticks(rotation=50)
 plt.show()
+
+# 3. MULTI-LINE CHART (Trend per Tahun)
+# =======================
+plt.figure(figsize=(10,6))
+for kolom in df_line_processed.columns:
+    plt.plot(df_line_processed.index, df_line_processed[kolom], marker='o', label=kolom)
+
+plt.title("Trend Kasus HIV dan AIDS per Tahun")
+plt.xlabel("Tahun")
+plt.ylabel("Jumlah Kasus")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+
+
+# 4. HEATMAP: Tahun vs Kelompok Umur
+# =======================
+plt.figure(figsize=(8,5))
+plt.imshow(df_heatmap_processed, aspect='auto', cmap='Reds')
+plt.colorbar(label="Jumlah Kasus")
+plt.xticks(ticks=range(len(df_heatmap_processed.columns)), labels=df_heatmap_processed.columns)
+plt.yticks(ticks=range(len(df_heatmap_processed.index)), labels=df_heatmap_processed.index)
+plt.title("Heatmap Kasus per Tahun dan Kelompok Umur")
+plt.show()
+
+
+
+# 5. GROUPED BAR CHART
+# =======================
+plt.figure(figsize=(10,5))
+x = np.arange(len(df_grouped_processed.index))
+width = 0.35
+
+plt.bar(x - width/2, df_grouped_processed['HIV'], width, label='HIV')
+plt.bar(x + width/2, df_grouped_processed['AIDS'], width, label='AIDS')
+
+plt.title("Perbandingan Kasus HIV dan AIDS Berdasarkan Kelompok Umur")
+plt.xticks(x, df_grouped_processed.index, rotation=45)
+plt.ylabel("Jumlah Kasus")
+plt.legend()
+plt.show()
+
+
+print("--- [BAGIAN VISUALISASI SELESAI] ---")
