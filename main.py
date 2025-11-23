@@ -59,24 +59,85 @@ print("--- [BAGIAN DATA ANALYST SELESAI] ---")
 # BAGIAN DATA VISUALIZER
 # =============================================================================
 
-# 1. PIE CHART
-#=================
-plt.figure(figsize=(6,6))
+print("--- [BAGIAN DATA VISUALIZER DIMULAI] ---")
+
+# === VISUAL 1: PIE CHART ===
+plt.figure(figsize=(7,7))
 plt.pie(
     df_pie_processed['Jumlah_kasus'],
     labels=df_pie_processed['HIV_AIDS'],
     autopct='%1.1f%%',
-    startangle=90
+    startangle=90,
+    colors=["#4CAF50", "#FF7043"]
 )
-plt.title("Distribusi Kasus HIV vs AIDS")
+plt.title("Persentase Kasus HIV dan AIDS", fontsize=13)
+plt.tight_layout()
 plt.show()
 
-# 2. BAR CHART (UMUR)
-#=====================
+
+# === VISUAL 2: BAR CHART UMUR ===
 plt.figure(figsize=(8,5))
-plt.bar(df_bar_processed.index, df_bar_processed.values)
-plt.title("Jumlah Kasus Berdasarkan Kelompok Umur")
-plt.xlabel("Kelompok Umur")
-plt.ylabel("Jumlah Kasus")
-plt.xticks(rotation=50)
+plt.bar(df_bar_processed.index, df_bar_processed.values, color="#42A5F5")
+
+plt.title("Jumlah Kasus Berdasarkan Kelompok Umur", fontsize=13)
+plt.xlabel("Kelompok Umur", fontsize=9)
+plt.ylabel("Jumlah Kasus", fontsize=9)
+
+plt.xticks(rotation=45, fontsize=8)
+plt.yticks(fontsize=8)
+
+plt.tight_layout()
 plt.show()
+
+
+# === VISUAL 3: MULTI LINE CHART ===
+plt.figure(figsize=(9,5))
+for kolom in df_line_processed.columns:
+    plt.plot(df_line_processed.index, df_line_processed[kolom], marker="o", linewidth=2)
+
+plt.title("Tren Kasus HIV dan AIDS per Tahun", fontsize=13)
+plt.xlabel("Tahun", fontsize=9)
+plt.ylabel("Jumlah Kasus", fontsize=9)
+
+plt.xticks(df_line_processed.index, fontsize=8)
+plt.yticks(fontsize=8)
+
+plt.legend(df_line_processed.columns)
+plt.grid(alpha=0.3)
+plt.tight_layout()
+plt.show()
+
+# === VISUAL 4: HEATMAP ===
+plt.figure(figsize=(9,6))
+plt.imshow(df_heatmap_processed, cmap="YlOrRd", aspect="auto")
+plt.title("Heatmap Kasus Berdasarkan Tahun dan Kelompok Umur", fontsize=13)
+plt.xlabel("Tahun", fontsize=9)
+plt.ylabel("Kelompok Umur", fontsize=9)
+
+plt.xticks(range(len(df_heatmap_processed.columns)), df_heatmap_processed.columns, fontsize=8)
+plt.yticks(range(len(df_heatmap_processed.index)), df_heatmap_processed.index, fontsize=8)
+plt.colorbar(label="Jumlah Kasus")
+plt.tight_layout()
+plt.show()
+
+
+# === VISUAL 5: GROUPED BAR CHART ===
+plt.figure(figsize=(10,5))
+x = np.arange(len(df_grouped_processed.index))
+width = 0.35
+
+plt.bar(x - width/2, df_grouped_processed['HIV'], width, label='HIV', color="#29B6F6")
+plt.bar(x + width/2, df_grouped_processed['AIDS'], width, label='AIDS', color="#EF5350")
+
+plt.title("Perbandingan Kasus HIV dan AIDS Berdasarkan Kelompok Umur", fontsize=13)
+plt.xlabel("Kelompok Umur", fontsize=9)
+plt.ylabel("Jumlah Kasus", fontsize=9)
+
+plt.xticks(x, df_grouped_processed.index, rotation=45, fontsize=8)
+plt.yticks(fontsize=8)
+
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+print("\n--- [BAGIAN DATA VISUALIZER SELESAI] ---")
