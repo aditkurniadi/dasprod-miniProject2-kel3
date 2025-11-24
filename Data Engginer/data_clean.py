@@ -21,7 +21,7 @@ except Exception as e:
     exit()
 
 # Cek apakah kolom yang diperlukan ada
-required_cols = ['kelompok_umur', 'Tahun', 'HIV_AIDS', 'Jumlah_kasus']
+required_cols = ['Kelompok_Umur', 'Tahun', 'HIV_AIDS', 'Jumlah_kasus']
 if not all(col in data.columns for col in required_cols):
     print("ERROR: CSV tidak memiliki kolom yang diperlukan.")
     print(f"Kolom yang ada: {data.columns.tolist()}")
@@ -57,11 +57,11 @@ umur_mapping = {
 
 # Pemetaan ke kolom 'Kelompok_umur'
 # Pastikan tidak ada nilai NaN di 'kelompok_umur' yang bisa menyebabkan error
-data['kelompok_umur'] = data['kelompok_umur'].fillna('Tidak Diketahui')
-data['Kelompok_Umur_Standar'] = data['kelompok_umur'].replace(umur_mapping)
+data['Kelompok_Umur'] = data['Kelompok_Umur'].fillna('Tidak Diketahui')
+data['Kelompok_Umur_Standar'] = data['Kelompok_Umur'].replace(umur_mapping)
 
 # Info tambahan: Cek apakah ada yg belum ter-mapping
-unmapped = data[~data['kelompok_umur'].isin(umur_mapping.keys())]['kelompok_umur'].unique()
+unmapped = data[~data['Kelompok_Umur'].isin(umur_mapping.keys())]['Kelompok_Umur'].unique()
 if len(unmapped) > 0:
     print(f"PERINGATAN: Ada nilai umur yang tidak ter-mapping: {unmapped}")
 
@@ -70,7 +70,7 @@ kolom_dihapus = ['bps_kode_provinsi', 'bps_nama_provinsi', 'satuan']
 data = data.drop(columns=kolom_dihapus, errors='ignore')
 
 # Hapus kolom Kelompok_Umur
-data = data.drop(columns=['kelompok_umur'], errors='ignore')
+data = data.drop(columns=['Kelompok_Umur'], errors='ignore')
 
 # Grouping untuk menghilangkan duplikat
 print("Melakukan agregasi data...")
