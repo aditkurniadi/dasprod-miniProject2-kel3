@@ -70,12 +70,19 @@ plt.pie(
     startangle=90,
     colors=["#4CAF50", "#FF7043"]
 )
-plt.title("Persentase Kasus HIV dan AIDS", fontsize=13)
+plt.title("Persentase Kasus HIV dan AIDS \nTahun 2018-2023", fontsize=13)
 plt.tight_layout()
 plt.show()
 
 
 # === VISUAL 2: BAR CHART UMUR ===
+
+# Urutan umur yang benar
+urutan_umur = ["0-4 Tahun", "5-14 Tahun", "15-19 Tahun", "20-49 Tahun", "50+ Tahun"]
+
+# Bar chart sesuai urutan umur
+df_bar_processed = df_bar_processed.reindex(urutan_umur)
+
 plt.figure(figsize=(8,5))
 plt.bar(df_bar_processed.index, df_bar_processed.values, color="#42A5F5")
 
@@ -126,6 +133,13 @@ plt.show()
 
 
 # === VISUAL 5: GROUPED BAR CHART ===
+
+# Urutan umur yang benar
+urutan_umur = ["0-4 Tahun", "5-14 Tahun", "15-19 Tahun", "20-49 Tahun", "50+ Tahun"]
+
+# Urutkan grouped chart sesuai urutan umur
+df_grouped_processed = df_grouped_processed.reindex(urutan_umur)
+
 plt.figure(figsize=(10,5))
 x = np.arange(len(df_grouped_processed.index))
 width = 0.35
