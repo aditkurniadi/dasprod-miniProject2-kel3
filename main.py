@@ -109,13 +109,17 @@ plt.show()
 
 # === VISUAL 4: HEATMAP ===
 plt.figure(figsize=(9,6))
-plt.imshow(df_heatmap_processed, cmap="YlOrRd", aspect="auto")
+
+# Ganti colormap agar lebih kontras
+plt.imshow(df_heatmap_processed, cmap="viridis", aspect="auto")
+
 plt.title("Heatmap Kasus Berdasarkan Tahun dan Kelompok Umur", fontsize=13)
 plt.xlabel("Tahun", fontsize=9)
 plt.ylabel("Kelompok Umur", fontsize=9)
 
 plt.xticks(range(len(df_heatmap_processed.columns)), df_heatmap_processed.columns, fontsize=8)
 plt.yticks(range(len(df_heatmap_processed.index)), df_heatmap_processed.index, fontsize=8)
+
 plt.colorbar(label="Jumlah Kasus")
 plt.tight_layout()
 plt.show()
