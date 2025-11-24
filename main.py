@@ -111,7 +111,7 @@ plt.show()
 plt.figure(figsize=(9,6))
 
 # Ganti colormap agar lebih kontras
-plt.imshow(df_heatmap_processed, cmap="viridis", aspect="auto")
+plt.imshow(df_heatmap_processed, cmap="coolwarm", aspect="auto")
 
 plt.title("Heatmap Kasus Berdasarkan Tahun dan Kelompok Umur", fontsize=13)
 plt.xlabel("Tahun", fontsize=9)
