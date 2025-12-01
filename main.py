@@ -17,7 +17,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Muat Data Bersih
-file_name = "hiv_aids_cleaned_final.xlsx"
+file_name = "hiv_aids_cleaned_final_revisi.xlsx"
 
 try:
     df = pd.read_excel(file_name)
@@ -78,7 +78,7 @@ plt.show()
 # === VISUAL 2: BAR CHART UMUR ===
 
 # Urutan umur yang benar
-urutan_umur = ["0-4 Tahun", "5-14 Tahun", "15-19 Tahun", "20-49 Tahun", "50+ Tahun"]
+urutan_umur = ["0-4 Tahun", "05-14 Tahun", "15-19 Tahun", "20-49 Tahun", "50+ Tahun"]
 
 # Bar chart sesuai urutan umur
 df_bar_processed = df_bar_processed.reindex(urutan_umur)
@@ -118,7 +118,7 @@ plt.show()
 plt.figure(figsize=(9,6))
 
 # Urutan umur yang benar
-urutan_umur = ["0-4 Tahun", "5-14 Tahun", "15-19 Tahun", "20-49 Tahun", "50+ Tahun"]
+urutan_umur = ["0-4 Tahun", "05-14 Tahun", "15-19 Tahun", "20-49 Tahun", "50+ Tahun"]
 
 # Urutkan grouped chart sesuai urutan umur
 df_heatmap_processed = df_heatmap_processed.reindex(urutan_umur)
@@ -141,7 +141,7 @@ plt.show()
 # === VISUAL 5: GROUPED BAR CHART ===
 
 # Urutan umur yang benar
-urutan_umur = ["0-4 Tahun", "5-14 Tahun", "15-19 Tahun", "20-49 Tahun", "50+ Tahun"]
+urutan_umur = ["0-4 Tahun", "05-14 Tahun", "15-19 Tahun", "20-49 Tahun", "50+ Tahun"]
 
 # Urutkan grouped chart sesuai urutan umur
 df_grouped_processed = df_grouped_processed.reindex(urutan_umur)
