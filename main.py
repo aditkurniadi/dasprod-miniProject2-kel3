@@ -117,6 +117,12 @@ plt.show()
 # === VISUAL 4: HEATMAP ===
 plt.figure(figsize=(9,6))
 
+# Urutan umur yang benar
+urutan_umur = ["0-4 Tahun", "5-14 Tahun", "15-19 Tahun", "20-49 Tahun", "50+ Tahun"]
+
+# Urutkan grouped chart sesuai urutan umur
+df_heatmap_processed = df_heatmap_processed.reindex(urutan_umur)
+
 # Ganti colormap agar lebih kontras
 plt.imshow(df_heatmap_processed, cmap="coolwarm", aspect="auto")
 
