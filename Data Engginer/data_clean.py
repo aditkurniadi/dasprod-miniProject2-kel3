@@ -36,7 +36,7 @@ umur_mapping = {
     '1 - 4 Tahun' : '0-4 Tahun',
     
     # Grup Anak (5-14 Tahun)
-    '5 - 14 Tahun': '05-14 Tahun',
+    '05 - 14 Tahun': '05-14 Tahun',
     
     # Grup Remaja (15-19 Tahun)
     '15 - 19 Tahun': '15-19 Tahun',
