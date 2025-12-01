@@ -36,7 +36,7 @@ umur_mapping = {
     '1 - 4 Tahun' : '0-4 Tahun',
     
     # Grup Anak (5-14 Tahun)
-    '05 - 14 Tahun': '05-14 Tahun',
+    '5 - 14 Tahun': '05-14 Tahun',
     
     # Grup Remaja (15-19 Tahun)
     '15 - 19 Tahun': '15-19 Tahun',
@@ -83,7 +83,7 @@ data_bersih = (
 # Simpan ke file excel
 try:
     # Ganti nama file output agar sesuai dengan skrip analitik
-    output_filename = 'hiv_aids_cleaned_final.xlsx' 
+    output_filename = 'hiv_aids_cleaned_final_revisi.xlsx' 
     data_bersih.to_excel(output_filename, index=False)
     print(f"Proses data cleansing selesai! File hasil: '{output_filename}'")
 except Exception as e:
